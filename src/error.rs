@@ -28,8 +28,8 @@ impl error::Error for TarError {
 }
 
 impl fmt::Display for TarError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        self.desc.fmt(f)
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}", self.io)
     }
 }
 
